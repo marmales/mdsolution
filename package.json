@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
+    "react-animations": "^1.0.0",
+    "react-awesome-button": "^6.1.2",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
     "react-scroll-into-view-if-needed": "^2.1.7",

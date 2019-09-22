@@ -19,7 +19,7 @@ const Triangle = styled.div `
     right: 0;
     background-color: #FFF;
     transform: rotate(-45deg);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 4px 10px 10px rgba(0, 0, 0, 0.25);
 `;
 const Boar = styled.img `
     transform: rotate(45deg) scaleX(-1);

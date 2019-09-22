@@ -16,6 +16,7 @@ function App() {
     const {firstScroll} = useContext(ViewContext);
     return (
         <Window>
+            <MainPage />
             <HomePage />
             {firstScroll ? null : <MainPage />}
         </Window>

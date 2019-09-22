@@ -14,7 +14,7 @@ const Image = styled.div `
     width: 300px;
     margin-left: -${props => props.boxMargin}px;
     margin-bottom: -${props => props.boxMargin}px;
-    transform: scaleX(-1);
+    transform: scaleX(-2) scaleY(2);
 `;
 
 
