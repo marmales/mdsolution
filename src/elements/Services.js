@@ -4,6 +4,7 @@ import { bounce } from 'react-animations';
 
 import SkillBar from './SkillBar';
 import LittleTitle from './styled/LittleTitle';
+import SkillTitle from './styled/SkillTitle';
 import TitleUnderscore from './styled/TitleUnderscore';
 import SkillDescription from './styled/SkillDescription';
 
@@ -13,41 +14,6 @@ const ServicesContainer = styled.div `
 `;
 const Skills = styled.div `
 
-`;
-const SkillTitle = styled.h3 `
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 1px;
-        width: 0;
-        transition: width 0s ease, background .5s ease;
-    }
-    &::after {
-        content: '';
-        display: block;
-        right: 0;
-        bottom: 0;
-        height: 1px;
-        width: 0;
-        background: #49494a;
-        transition: width .5s ease;
-    }
-    &:hover::before {
-        width: 100%;
-        background: #49494a;
-        transition: width .5s ease;
-    }
-    &:hover::after {
-        width: 100%;
-        background: transparent;
-        transition: all 0s ease;
-    }
 `;
 const Row = styled.div `
     display: flex;
@@ -89,15 +55,16 @@ function Backend() {
         );
 }
 function Services() {
-    const [skillContent, changeSkillContent] = useState(<Frontend />)
+    var [front, back] = [<Frontend />, <Backend />];
+    const [skillContent, changeSkillContent] = useState(front);
     return(
         <ServicesContainer>
             <LittleTitle>Services</LittleTitle>
             <TitleUnderscore />
             <Skills>
                 <Row>
-                    <SkillTitle>Frontend</SkillTitle>
-                    <SkillTitle>Backend</SkillTitle>
+                    <SkillTitle onClick={() => changeSkillContent(front)}>Frontend</SkillTitle>
+                    <SkillTitle onClick={() => changeSkillContent(back)}>Backend</SkillTitle>
                 </Row>
                 {skillContent}
             </Skills>

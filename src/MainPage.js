@@ -38,7 +38,6 @@ const MainContent = styled.div `
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: stretch;
 `
 const Separator = styled.div `
     background-color: #49494a;

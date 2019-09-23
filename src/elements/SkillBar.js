@@ -4,15 +4,13 @@ import styled from 'styled-components';
 const BarLine = styled.div `
     display: flex;
     flex-directions: column;
-    justify-content: center;
+    justify-content: space-between;
 `;
 const BarTitle = styled.div `
 
 `;
 const Bar = styled.div `
     width: 100px;
-    height: 20px;
-    background-color: yellow;
     overflow: auto;
 `;
 const BarAmount = styled.div `
