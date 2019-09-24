@@ -1,7 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 
 export default styled.div `
+    text-transform: uppercase;
     position: relative;
     font-family: 'Source Sans Pro', sans-serif;
     margin: 10px;

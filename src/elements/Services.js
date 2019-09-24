@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled, {keyframes} from 'styled-components';
-import { bounce } from 'react-animations';
+import { zoomIn as contentAnimation } from 'react-animations';
 
 import SkillBar from './SkillBar';
 import LittleTitle from './styled/LittleTitle';
@@ -8,6 +8,8 @@ import SkillTitle from './styled/SkillTitle';
 import TitleUnderscore from './styled/TitleUnderscore';
 import SkillDescription from './styled/SkillDescription';
 
+import javascript from '../content/javascript.svg';
+import microsoft from '../content/microsoft.png';
 
 const ServicesContainer = styled.div `
     width: 40vw;
@@ -23,9 +25,13 @@ const Row = styled.div `
     align-items: stretch;
 `;
 const DescriptionContainer = styled.div `
-    animation: 1s ${keyframes`${bounce}`}
+    font-family: 'Source Sans Pro', sans-serif;
+    animation: 2s ${keyframes`${contentAnimation}`}
 `;
-
+const Icon = styled.img `
+    height: 30px;
+    width: 30px;
+`;
 function Frontend() {
     return(
         <DescriptionContainer>
@@ -34,9 +40,12 @@ function Frontend() {
                 My deep understanding of the JavaScript combined with UX and 
                 design experience leads applications development from start to finish.
             </SkillDescription>
-            <SkillBar width={0.75}>Vanilla JavaScript</SkillBar>
-            <SkillBar width={1}>React.js</SkillBar>
-            <SkillBar width={0.2}>HTML5</SkillBar>
+            <SkillBar width={0.85}>Vanilla JavaScript</SkillBar>
+            <SkillBar width={0.8}>React.js</SkillBar>
+            <SkillBar width={0.65}>Webpack</SkillBar>
+            <SkillBar width={0.55}>Less</SkillBar>
+            <SkillBar width={0.5}>HTML5/CSS3</SkillBar>
+            <SkillBar width={0.3}>WinForms/WPF</SkillBar>
         </DescriptionContainer>
     );
 }
@@ -47,18 +56,22 @@ function Backend() {
                 Years of the experience of developing and maintaining .NET applications gave me solid
                 understanding of the .NET environment and how to write scalable applications. 
                 I am not scared to dive into complex projects and with extensive knowledge 
-                of the design patterns and good code practice I can make your code beautiful again!
+                of the design patterns, good code practice I can make your code beautiful again!
             </SkillDescription>
-            <SkillBar width={1}>.NET</SkillBar>
-            <SkillBar width={0.5}>GIT</SkillBar>
+            <SkillBar width={0.9}>.NET</SkillBar>
+            <SkillBar width={0.75}>ASP.NET MVC</SkillBar>
+            <SkillBar width={0.5}>MS SQL</SkillBar>
+            <SkillBar width={0.45}>Node.js</SkillBar>
+            <SkillBar width={0.35}>WCF</SkillBar>
         </DescriptionContainer>
         );
 }
 function Services() {
-    var [front, back] = [<Frontend />, <Backend />];
+    var [front, back] = ["front", "backend"];
     const [skillContent, changeSkillContent] = useState(front);
     return(
         <ServicesContainer>
+            <Icon src={skillContent === front ? javascript : microsoft}/>
             <LittleTitle>Services</LittleTitle>
             <TitleUnderscore />
             <Skills>
@@ -66,7 +79,7 @@ function Services() {
                     <SkillTitle onClick={() => changeSkillContent(front)}>Frontend</SkillTitle>
                     <SkillTitle onClick={() => changeSkillContent(back)}>Backend</SkillTitle>
                 </Row>
-                {skillContent}
+                {skillContent === front ? <Frontend /> : <Backend />}
             </Skills>
         </ServicesContainer>
     )

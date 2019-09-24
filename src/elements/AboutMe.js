@@ -1,8 +1,10 @@
+/* eslint-disable no-useless-escape */
 import React from 'react';
 import styled from 'styled-components';
-
 import LittleTitle from './styled/LittleTitle';
 import TitleUnderscore from './styled/TitleUnderscore';
+import LinkedinIcon from './../content/linkedin.svg';
+import StackoverflowIcon from './../content/stackoverflow.png';
 
 const AboutMeContainer = styled.div `
     width: 40vw;
@@ -24,8 +26,6 @@ const View = styled.div `
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    font-weight: bold;
 `;
 const Description = styled.span `
     margin: 15px;
@@ -56,11 +56,33 @@ const ListContent = styled.div `
         text-decoration: none;
     }
 `;
+const ContactRow = styled.div `
+    display: flex;
+    align-items: left;
+    flex-direction: row;
+`;
+const Linkedin = styled.a.attrs({
+    href: 'https://www.linkedin.com/in/marmales/'
+})`
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    content: url('${LinkedinIcon}')
+`
+const Stackoverflow = styled.a.attrs({
+    href: 'https://stackoverflow.com/users/7516160/marcin-maleszewski'
+})`
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    content: url('${StackoverflowIcon}')
+`
 function ListLine (props) { return <ListItem><Before>{props.before}</Before><Tilde/><ListContent>{props.children}</ListContent></ListItem>; }
 
 function AboutMe(props) {
     return (
         <AboutMeContainer>
+            <ContactRow><Linkedin /><Stackoverflow /></ContactRow>
             <LittleTitle>About me</LittleTitle>
             <TitleUnderscore />
             <ContentContainer>

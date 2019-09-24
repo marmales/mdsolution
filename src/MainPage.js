@@ -10,7 +10,6 @@ import {pageName as homePageName} from './HomePage';
 const View = styled.div`
     position: relative;
     background-image: #fff;
-    overflow:hidden;
     height: 100vh;
     
     display: flex;
@@ -22,6 +21,7 @@ const isCurrentView = activeView => {
     return activeView === pageName;
 };
 const MainHeader = styled.div `
+    overflow:hidden;
     position: relative;
     background-color: #949494;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
@@ -42,7 +42,7 @@ const MainContent = styled.div `
 const Separator = styled.div `
     background-color: #49494a;
     width: 1px;
-    height: 60%;
+    height: 90%;
 
 `;
 const MainPage = () => {
