@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled, {keyframes} from 'styled-components';
-import { zoomIn as contentAnimation } from 'react-animations';
+import { tada as contentAnimation } from 'react-animations';
 
 import SkillBar from './SkillBar';
 import LittleTitle from './styled/LittleTitle';
@@ -29,6 +29,7 @@ const DescriptionContainer = styled.div `
     animation: 2s ${keyframes`${contentAnimation}`}
 `;
 const Icon = styled.img `
+
     height: 30px;
     width: 30px;
 `;
@@ -71,9 +72,9 @@ function Services() {
     const [skillContent, changeSkillContent] = useState(front);
     return(
         <ServicesContainer>
-            <Icon src={skillContent === front ? javascript : microsoft}/>
             <LittleTitle>Services</LittleTitle>
             <TitleUnderscore />
+            <Icon src={skillContent === front ? javascript : microsoft}/>
             <Skills>
                 <Row>
                     <SkillTitle onClick={() => changeSkillContent(front)}>Frontend</SkillTitle>

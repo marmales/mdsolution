@@ -57,8 +57,10 @@ const ListContent = styled.div `
     }
 `;
 const ContactRow = styled.div `
+    width: 100%;
+    margin: 25px 0px;
     display: flex;
-    align-items: left;
+    justify-content: center;
     flex-direction: row;
 `;
 const Linkedin = styled.a.attrs({
@@ -82,9 +84,9 @@ function ListLine (props) { return <ListItem><Before>{props.before}</Before><Til
 function AboutMe(props) {
     return (
         <AboutMeContainer>
-            <ContactRow><Linkedin /><Stackoverflow /></ContactRow>
             <LittleTitle>About me</LittleTitle>
             <TitleUnderscore />
+            <ContactRow><Linkedin /><Stackoverflow /></ContactRow>
             <ContentContainer>
             <View>
                 <Description>
@@ -93,9 +95,9 @@ function AboutMe(props) {
                     I delivered apllications with CI/CD pattern, TDD approach, with git version control system, automated integration tests, end to end tests ... and much more!`}
                 </Description>
                 <List>
-                    <ListLine before={"13\' - 17\'"}>graduated college as IT System Engineer in <a href="http://www.sggw.pl/en/">SGGW</a></ListLine>
-                    <ListLine before={"17\'"}>built thermal images processing applications for <a href="https://www.autothermal.eu/">Authothermal</a></ListLine>
                     <ListLine before={"18\' - 19\'"}>get to know with banking systems with <a href="https://www.accenture.com/">Accenture</a></ListLine>
+                    <ListLine before={"17\'"}>built thermal images processing applications for <a href="https://www.autothermal.eu/">Authothermal</a></ListLine>
+                    <ListLine before={"13\' - 17\'"}>graduated college as IT System Engineer in <a href="http://www.sggw.pl/en/">SGGW</a></ListLine>
                 </List>
             </View>
             </ContentContainer>

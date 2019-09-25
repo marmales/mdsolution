@@ -8,6 +8,7 @@ import Services from './elements/Services';
 import {pageName as homePageName} from './HomePage';
 
 const View = styled.div`
+    overflow:hidden;
     position: relative;
     background-image: #fff;
     height: 100vh;
@@ -21,7 +22,6 @@ const isCurrentView = activeView => {
     return activeView === pageName;
 };
 const MainHeader = styled.div `
-    overflow:hidden;
     position: relative;
     background-color: #949494;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
@@ -36,14 +36,9 @@ const MainContent = styled.div `
     height:60vh;
 
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-`
-const Separator = styled.div `
-    background-color: #49494a;
-    width: 1px;
-    height: 90%;
-
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
 const MainPage = () => {
     const { activeView, scroll } = useContext(ViewContext);
@@ -58,8 +53,7 @@ const MainPage = () => {
                 <MainHeader />
                 <MainContent>
                     <AboutMe />
-                    <Separator/>
-                    <Services>Moje usługi</Services>
+                    <Services />
                 </MainContent>
             </View>
         </ScrollIntoViewIfNeeded>
