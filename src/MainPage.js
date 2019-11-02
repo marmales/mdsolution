@@ -1,45 +1,64 @@
-import React, {useContext, useEffect} from 'react';
+import React, { useContext, useEffect } from 'react';
 import styled from "styled-components";
-import ScrollIntoViewIfNeeded from 'react-scroll-into-view-if-needed';
-
-import ViewContext from "./ViewContext";
+import ScrollDown from './elements/styled/Scroll'
 import AboutMe from './elements/AboutMe';
 import Services from './elements/Services';
-import {pageName as homePageName} from './HomePage';
+import { pageName as homePageName } from './HomePage';
+import ViewContext from "./ViewContext";
+
 
 const View = styled.div`
-    overflow:hidden;
     position: relative;
     background-image: #fff;
-    height: 100vh;
     
     display: flex;
     flex-direction: column;
     align-items: stretch;
 `;
 const pageName = 'main';
-const isCurrentView = activeView => {
-    return activeView === pageName;
-};
-const MainHeader = styled.div `
-    position: relative;
-    background-color: #949494;
+const HeaderContents = styled.div `
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    width: 100%;
+`;
+const HeaderSvg = styled.svg `
+    z-index: 2;
+    position: sticky;
+    height: 25vh;
+    width: 100%;
+    fill: #949494;
+`;
+const PolygonSvg = styled.polygon `
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
-    top: -15vh;
-    height: 35vh;
-    transform: skewY(2.5deg);
-
 `;
 const MainContent = styled.div `
+    z-index: 0;
     position: relative;
-    top: -5vh;
-    height:60vh;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 `;
+const AboutBlockStyle = styled.div `
+    display: block;
+    minHeight: 100vh;
+`
+const EasterEgg = styled.div `
+    height: 30vh;
+`
+function AboutBlock(props) {
+    useEffect(() => {
+        setTimeout(() => {
+            const iam = document.getElementById("easteregg");
+            iam.innerText = "HIRABLE"
+        }, 15000);
+    })
+    return (
+        <AboutBlockStyle id="about"><EasterEgg id="easteregg"/>{props.children}</AboutBlockStyle>
+    );
+}
 const MainPage = () => {
     const { activeView, scroll } = useContext(ViewContext);
     useEffect(() => {
@@ -48,15 +67,20 @@ const MainPage = () => {
         }
     });
     return (
-        <ScrollIntoViewIfNeeded active={isCurrentView(activeView)} options={{behavior: 'smooth', scrollMode: 'always'}}>
-            <View>
-                <MainHeader />
-                <MainContent>
+        <View>
+            <HeaderContents>
+                <HeaderSvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <PolygonSvg points="0,0 100,0 100,75 0,100" />
+                </HeaderSvg>
+            </HeaderContents>
+            <MainContent>
+                <AboutBlock>
                     <AboutMe />
-                    <Services />
-                </MainContent>
-            </View>
-        </ScrollIntoViewIfNeeded>
+                    <ScrollDown />
+                </AboutBlock>
+                <Services />
+            </MainContent>
+        </View>
     );
 };
 

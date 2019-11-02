@@ -1,37 +1,20 @@
+
 import styled from 'styled-components';
 
-export default styled.h3 `
+export default styled.div `
+    border: 2px #949494 solid;
+    border-radius: 5px;
+    padding: 2px 5px;
     cursor: pointer;
     display: inline-block;
     position: relative;
-    &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 1px;
-        width: 0;
-        transition: width 0s ease, background .5s ease;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 24px;
+    opacity: 0.5;
     }
-    &::after {
-        content: '';
-        display: block;
-        right: 0;
-        bottom: 0;
-        height: 1px;
-        width: 0;
-        background: #49494a;
-        transition: width .5s ease;
-    }
-    &:hover::before {
-        width: 100%;
-        background: #49494a;
-        transition: width .5s ease;
-    }
-    &:hover::after {
-        width: 100%;
-        background: transparent;
-        transition: all 0s ease;
+    &:hover {
+        opacity: 1;
+        box-shadow: 10px -2px #949494;
+        transition: all 0.5s ease;
     }
 `;

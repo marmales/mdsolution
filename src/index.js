@@ -8,6 +8,9 @@ import ViewProvider from "./ViewProvider";
 
 
 const GlobalStyle = createGlobalStyle`
+    html {
+        scroll-behavior: smooth;
+    }
     body {
      margin: 0;
      padding: 0;

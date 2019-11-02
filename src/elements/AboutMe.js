@@ -7,8 +7,10 @@ import LinkedinIcon from './../content/linkedin.svg';
 import StackoverflowIcon from './../content/stackoverflow.png';
 
 const AboutMeContainer = styled.div `
-    width: 40vw;
-    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0 auto;
+    width: 60vw;
+    min-height: 60vh;
+    font-family: 'Raleway', sans-serif;
 `;
 const ContentContainer = styled.div `
     margin: 20px 0px;
@@ -81,7 +83,7 @@ const Stackoverflow = styled.a.attrs({
 `
 function ListLine (props) { return <ListItem><Before>{props.before}</Before><Tilde/><ListContent>{props.children}</ListContent></ListItem>; }
 
-function AboutMe(props) {
+function AboutMe() {
     return (
         <AboutMeContainer>
             <LittleTitle>About me</LittleTitle>

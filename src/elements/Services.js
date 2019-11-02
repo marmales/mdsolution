@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled, {keyframes} from 'styled-components';
-import { tada as contentAnimation } from 'react-animations';
+import { zoomIn as contentAnimation } from 'react-animations';
 
 import SkillBar from './SkillBar';
 import LittleTitle from './styled/LittleTitle';
@@ -12,7 +12,8 @@ import javascript from '../content/javascript.svg';
 import microsoft from '../content/microsoft.png';
 
 const ServicesContainer = styled.div `
-    width: 40vw;
+    width: 60vw;
+    margin-bottom: 10vh;
 `;
 const Skills = styled.div `
 
@@ -25,11 +26,21 @@ const Row = styled.div `
     align-items: stretch;
 `;
 const DescriptionContainer = styled.div `
-    font-family: 'Source Sans Pro', sans-serif;
-    animation: 2s ${keyframes`${contentAnimation}`}
+    font-family: 'Raleway', sans-serif;
+    animation: 1s ${keyframes`${contentAnimation}`}
+`;
+const IconContainer = styled.div `
+    margin 25px 0px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 const Icon = styled.img `
-
+    text-align: center;
+    left: 0;
+    right: 0;
     height: 30px;
     width: 30px;
 `;
@@ -45,8 +56,8 @@ function Frontend() {
             <SkillBar width={0.8}>React.js</SkillBar>
             <SkillBar width={0.65}>Webpack</SkillBar>
             <SkillBar width={0.55}>Less</SkillBar>
-            <SkillBar width={0.5}>HTML5/CSS3</SkillBar>
-            <SkillBar width={0.3}>WinForms/WPF</SkillBar>
+            <SkillBar width={0.5}>HTML5 CSS3</SkillBar>
+            <SkillBar width={0.3}>WinForms WPF</SkillBar>
         </DescriptionContainer>
     );
 }
@@ -74,7 +85,7 @@ function Services() {
         <ServicesContainer>
             <LittleTitle>Services</LittleTitle>
             <TitleUnderscore />
-            <Icon src={skillContent === front ? javascript : microsoft}/>
+            <IconContainer><Icon src={skillContent === front ? javascript : microsoft}/></IconContainer>
             <Skills>
                 <Row>
                     <SkillTitle onClick={() => changeSkillContent(front)}>Frontend</SkillTitle>
@@ -82,6 +93,7 @@ function Services() {
                 </Row>
                 {skillContent === front ? <Frontend /> : <Backend />}
             </Skills>
+            <div id="services"/>
         </ServicesContainer>
     )
 }

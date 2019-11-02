@@ -1,12 +1,18 @@
-import React, {useContext, useEffect, useState, useRef} from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
-import {pageName as mainPageName} from "../MainPage";
+import { pageName as mainPageName } from "../MainPage";
 import ViewContext from "../ViewContext";
 
 const btnHeight = 80;
 const LondrinaSolid = 'Londrina Solid';
 const LondrinaShadow = 'Londrina Shadow';
 const Box = styled.div`
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
     font-family: '${LondrinaSolid}', cursive;
     flex: 1;
     
@@ -15,18 +21,21 @@ const Box = styled.div`
     align-items: center;
     justify-content: center;
 `;
-const Title = styled.span `
+const Title = styled.span`
     font-size: 60px;
     white-space: nowrap;
     margin-bottom: 40px;
     color: #FFF;
 `;
-const SolidTitle = styled(Title) `
+const SolidTitle = styled(Title)`
     font-family: '${LondrinaSolid}', cursive;
 `;
-const ShadowTitle = styled(Title) `
+const ShadowTitle = styled(Title)`
     font-family: '${LondrinaShadow}', cursive;
 `;
+const ButtonNavigation = styled.a`
+    text-decoration: none;
+`
 const Button = styled.div`
     font-size: 40px;
     color: #FFF;
@@ -75,7 +84,7 @@ const Button = styled.div`
 `;
 
 function ClickMeButton() {
-    const {scroll} = useContext(ViewContext);
+    const { scroll } = useContext(ViewContext);
     const btnRef = useRef(null);
     const [fontFamily, setFontFamily] = useState(LondrinaShadow);
     const handleMouseOver = () => setFontFamily(LondrinaSolid);
@@ -90,15 +99,17 @@ function ClickMeButton() {
         };
     });
     const onScrollClick = () => {
-        scroll({currentView: mainPageName});
+        scroll({ currentView: mainPageName });
     };
     const FontComponent = fontFamily === LondrinaShadow ? ShadowTitle : SolidTitle;
     return (
         <Box>
             <FontComponent>Fullstack .NET Developer</FontComponent>
-            <Button ref={btnRef} onClick={onScrollClick}>
-                <span>Get to know me!</span>
-            </Button>
+            <ButtonNavigation href={"#about"}>
+                <Button ref={btnRef} onClick={onScrollClick}>
+                    <span>Get to know me!</span>
+                </Button>
+            </ButtonNavigation>
         </Box>
     );
 }
