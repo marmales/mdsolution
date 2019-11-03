@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.js": "/static/js/main.170bb378.chunk.js",
-    "main.js.map": "/static/js/main.170bb378.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.3123fcf6.chunk.js": "/static/js/2.3123fcf6.chunk.js",
-    "static/js/2.3123fcf6.chunk.js.map": "/static/js/2.3123fcf6.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.f9a9593af4f7a9a375f8fbe7c268ce40.js": "/precache-manifest.f9a9593af4f7a9a375f8fbe7c268ce40.js",
-    "service-worker.js": "/service-worker.js",
-    "static/media/boar.png": "/static/media/boar.4ab4aa2e.png",
-    "static/media/javascript.svg": "/static/media/javascript.dd60b11e.svg",
-    "static/media/linkedin.svg": "/static/media/linkedin.b554c481.svg"
+    "main.js": "/mdsolution/static/js/main.39952494.chunk.js",
+    "main.js.map": "/mdsolution/static/js/main.39952494.chunk.js.map",
+    "runtime~main.js": "/mdsolution/static/js/runtime~main.90297585.js",
+    "runtime~main.js.map": "/mdsolution/static/js/runtime~main.90297585.js.map",
+    "static/js/2.2c1b6007.chunk.js": "/mdsolution/static/js/2.2c1b6007.chunk.js",
+    "static/js/2.2c1b6007.chunk.js.map": "/mdsolution/static/js/2.2c1b6007.chunk.js.map",
+    "index.html": "/mdsolution/index.html",
+    "precache-manifest.1557c580afe10e39c3302b6fd8f614ca.js": "/mdsolution/precache-manifest.1557c580afe10e39c3302b6fd8f614ca.js",
+    "service-worker.js": "/mdsolution/service-worker.js",
+    "static/media/boar.png": "/mdsolution/static/media/boar.4ab4aa2e.png",
+    "static/media/javascript.svg": "/mdsolution/static/media/javascript.dd60b11e.svg",
+    "static/media/linkedin.svg": "/mdsolution/static/media/linkedin.b554c481.svg"
   }
 }
