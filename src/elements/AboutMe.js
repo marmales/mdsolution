@@ -8,7 +8,7 @@ import StackoverflowIcon from './../content/stackoverflow.png';
 
 const AboutMeContainer = styled.div `
     margin: 0 auto;
-    width: 60vw;
+    width: 80vw;
     min-height: 60vh;
     font-family: 'Raleway', sans-serif;
 `;
@@ -34,7 +34,7 @@ const Description = styled.span `
 `;
 const List = styled.div `
     list-style: none;
-    margin: 25px;
+    margin: 15px;
 `;
 const ListItem = styled.div `
     display: flex;
@@ -43,7 +43,7 @@ const ListItem = styled.div `
 `;
 const Before = styled.div `
     white-space: nowrap;
-    width: 20%;
+    width: 28%;
 `;
 const Tilde = styled.div `
     &::before {
@@ -97,6 +97,7 @@ function AboutMe() {
                     I delivered apllications with CI/CD pattern, TDD approach, with git version control system, automated integration tests, end to end tests ... and much more!`}
                 </Description>
                 <List>
+                    <ListLine before={"19\' - now"}>system transformation from old system to .NET world</ListLine>
                     <ListLine before={"18\' - 19\'"}>get to know with banking systems with <a href="https://www.accenture.com/">Accenture</a></ListLine>
                     <ListLine before={"17\'"}>built thermal images processing applications for <a href="https://www.autothermal.eu/">Authothermal</a></ListLine>
                     <ListLine before={"13\' - 17\'"}>graduated college as IT System Engineer in <a href="http://www.sggw.pl/en/">SGGW</a></ListLine>

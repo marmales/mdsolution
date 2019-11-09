@@ -23,9 +23,12 @@ const Box = styled.div`
 `;
 const Title = styled.span`
     font-size: 60px;
-    white-space: nowrap;
+    text-align: center;
     margin-bottom: 40px;
     color: #FFF;
+    @media (max-width: 800px) {
+        margin-top: 25vh;
+    }
 `;
 const SolidTitle = styled(Title)`
     font-family: '${LondrinaSolid}', cursive;
@@ -104,7 +107,7 @@ function ClickMeButton() {
     const FontComponent = fontFamily === LondrinaShadow ? ShadowTitle : SolidTitle;
     return (
         <Box>
-            <FontComponent>Fullstack .NET Developer</FontComponent>
+            <FontComponent>{"Fullstack .NET\u00A0Developer"}</FontComponent>
             <ButtonNavigation href={"#about"}>
                 <Button ref={btnRef} onClick={onScrollClick}>
                     <span>Get to know me!</span>

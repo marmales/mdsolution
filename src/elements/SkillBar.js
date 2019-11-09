@@ -2,10 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BarLine = styled.div `
-    margin: 10px 25%;
+    margin: 10px 20%;
     display: flex;
     flex-directions: column;
     justify-content: space-between;
+
+    @media (max-width: 800px){
+        margin: 10px 5%;
+    }
 `;
 const BarTitle = styled.div `
 

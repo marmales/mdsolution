@@ -12,7 +12,7 @@ import javascript from '../content/javascript.svg';
 import microsoft from '../content/microsoft.png';
 
 const ServicesContainer = styled.div `
-    width: 60vw;
+    width: 80vw;
     margin-bottom: 10vh;
 `;
 const Skills = styled.div `

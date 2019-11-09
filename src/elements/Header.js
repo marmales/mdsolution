@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 
 const Box = styled.div `
-    justify-content: space-between;
     margin: ${props => props.boxMargin}px 0px 0px ${props => props.boxMargin}px;
 `;
 const Image = styled.img `
@@ -15,6 +14,11 @@ const Image = styled.img `
     height: auto;
     transform: scaleX(-1); 
 `;
+const Children = styled.div `
+    @media (max-width: 800px){
+        transform: rotate(-90deg) translate(-20%, -200%);
+    }
+`
 
 
 function Header(props) {
@@ -22,7 +26,7 @@ function Header(props) {
 
     return (
         <Box boxMargin={50}>
-            {props.children}
+            <Children>{props.children}</Children>
             <Image src={imageSrc}/>
         </Box>
 
